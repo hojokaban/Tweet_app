@@ -10,7 +10,6 @@ class TweetsController < ApplicationController
   def show
   	@tweet = Tweet.find_by(id: params[:id])
     @user = @tweet.user
-    @likes_count = Like.where(tweet_id: @tweet.id).count
   end
 
   def edit
@@ -56,7 +55,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find_by(id: params[:id])
     if @tweet.user_id != @current_user.id
       flash[:notice] = "権限がありません"
-      redirect_to("/tweets/index")
+      redirect_to("/posts/index")
     end
   end
 

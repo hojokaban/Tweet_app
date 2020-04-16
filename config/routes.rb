@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get "login" => "users#login_form"
   post "login" => "users#login"
   post "logout" => "users#logout"
+  post "likes/:tweet_id/create" => "likes#create"
+  post "likes/:tweet_id/destroy" => "like#destroy"
+  get "users/:id/likes" => "user#likes"
 end
 
