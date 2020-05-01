@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   # ログインしている時に入れなくなる
   before_action :forbid_login_user,{only: [:new, :create, :login_form, :login]}
-  # urlを打っても入れなくする
+  # urlを打っても入れなくする.
   before_action :ensure_correct_user,{only: [:edit, :update]}
 
   def index
