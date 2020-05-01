@@ -16,12 +16,12 @@
 
     <% @likes.each do |like| %>
       <% tweet = Tweet.find_by(id: like.tweet_id) %>
-      <div class="posts-index-item">
-        <div class="post-left">
+      <div class="tweets-index-item">
+        <div class="tweet-left">
           <img src="<%= "/user_images/#{tweet.user.icon_id}" %>">
         </div>
-        <div class="post-right">
-          <div class="post-user-name">
+        <div class="tweet-right">
+          <div class="tweet-user-name">
             <%= link_to(tweet.user.name, "/users/#{tweet.user.id}") %>
           </div>
           <%= link_to(tweet.body, "/tweets/#{tweet.id}") %>

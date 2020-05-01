@@ -1,12 +1,12 @@
-<div class="main posts-index">
+<div class="main tweets-index">
   <div class="container">
     <% @tweets.each do |tweet| %>
-      <div class="posts-index-item">
-      	<div class="post-left">
+      <div class="tweets-index-item">
+      	<div class="tweet-left">
           <img src="<%= "/user_images/#{tweet.user.icon_id}" %>">
         </div>
-        <div class="post-right">
-          <div class="post-user-name">
+        <div class="tweet-right">
+          <div class="tweet-user-name">
             <%= link_to(tweet.user.name, "/users/#{tweet.user.id}") %>
           </div>
         <%=link_to(tweet.body,"/tweets/#{tweet.id}") %>
