@@ -13,13 +13,13 @@
       </div>
 
       <% if Like.find_by(user_id: @current_user.id, tweet_id: @tweet.id) %>
-        <%= link_to("/likes/#{@tweet.id}/destroy", {method: "post"}) do %>
+        <%= link_to tweet_likes_path(@tweet), method: :delete do %>
           <span class="fa fa-heart like-btn-unlike"></span>
         <% end %>
 
         <% else %>
 
-        <%= link_to("/likes/#{@tweet.id}/create", {method: "post"}) do %>
+        <%= link_to tweet_likes_path(@tweet), method: :post do %>
           <span class="fa fa-heart like-btn"></span>
         <% end %>
       <% end %>

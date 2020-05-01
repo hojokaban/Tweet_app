@@ -12,7 +12,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-  	@like = Like.new(
+  	@like = Like.find_by(
   		user_id: @current_user.id,
       tweet_id: params[:tweet_id]
   		)

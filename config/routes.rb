@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  post "likes/:tweet_id/create" => "likes#create"
-  post "likes/:tweet_id/destroy" => "likes#destroy"
+  #post "likes/:tweet_id/create" => "likes#create"
+  #post "likes/:tweet_id/destroy" => "likes#destroy"
 
   resources :users, :except => :new
   get "signup" => "users#new"
@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get "login" => "users#login_form"
   get "users/:id/likes" => "users#likes"
 
-  resources :tweets
+  resources :tweets do
+    resource :likes, only: [:create, :destroy]
+  end
 
   root :to => "home#top"
 
